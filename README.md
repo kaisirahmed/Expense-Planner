@@ -1,5 +1,5 @@
 
-<img src="https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f3fd73.svg">
+<img align="center" src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg">
 
 # Expense Planner
 
