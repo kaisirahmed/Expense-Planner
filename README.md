@@ -1,4 +1,7 @@
-# expense_plannner
+
+<p align="center"><img src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg" width="400"></p>
+
+# Expense Planner
 
 A new Flutter project.
 
