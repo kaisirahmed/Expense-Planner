@@ -3,7 +3,7 @@
 
 # Expense Planner
 
-A new Flutter project.
+Learning a New Flutter project.
 
 ## Getting Started
 
