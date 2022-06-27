@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Personal Expenses',
       theme: ThemeData(
+        primarySwatch: Colors.green,
+        accentColor: Colors.amber,
+        errorColor: Colors.red,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
           bodyText1: TextStyle(
@@ -102,10 +105,15 @@ class _MyHomePageState extends State<MyHomePage> {
     },);
   }
 
+  void _deleteTransaction(String id) {
+    setState(() {
+      _userTransactions.removeWhere((tx) => tx.id == id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    final appBar = AppBar(
         //backgroundColor: Colors.red,
        title: const Text(
             'Expense Planner',
@@ -120,14 +128,20 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () => _startAddNewTransaction(context),
           )
         ],
-      ),
+      );
+    return Scaffold(
+      appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Chart(_recentTransactions),
-              TransactionList(_userTransactions),
+              Container(
+                height: (MediaQuery.of(context).size.height - 
+                appBar.preferredSize.height - MediaQuery.of(context).padding.top) * 0.4, 
+                child: Chart(_recentTransactions),
+                ),
+              TransactionList(_userTransactions, _deleteTransaction),
             ],
           ),
         ),
